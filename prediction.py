@@ -30,5 +30,3 @@ predicted_class = iris.target_names[prediction][0]
 print("Sample input features:", X_test[0])
 print("Predicted class:", predicted_class)
 
-with open(r"C:\Users\anbud\Sample\MLprojects\classifier.pkl", "wb") as model_file:
-  pickle.dump(rf, model_file)
