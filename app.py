@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-with open(r"classifier.pkl", "rb") as model_file:
+with open("classifier.pkl", "rb") as model_file:
   pipmodel = pickle.load(model_file)
 st.title("iris pedictor")
 st.write("Enter the following details:")
@@ -15,3 +15,4 @@ if st.button("Predict"):
  predicted_class = iris.target_names[prediction][0]
 
  st.write(f"flower: {predicted_class}")
+
