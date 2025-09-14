@@ -12,9 +12,10 @@ p_l = float(st.number_input("petal length", min_value=1, max_value=5))
 p_w = float(st.number_input("petal width", min_value=1, max_value=5))
 if st.button("Predict"):
  features = np.array([[s_l,s_w,p_l,p_w]])
- prediction = pipmodel.predict(features)
+ prediction =model.predict(features)
  predicted_class = iris.target_names[prediction][0]
 
  st.write(f"flower: {predicted_class}")
+
 
 
