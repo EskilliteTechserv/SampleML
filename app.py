@@ -1,8 +1,9 @@
 import streamlit as st
 import pickle
 import numpy as np
-with open("classifier.pkl", "rb") as model_file:
-  pipmodel = pickle.load(model_file)
+import joblib
+joblib.dump(model, "classifier.pkl")
+model = joblib.load("classifier.pkl")
 st.title("iris pedictor")
 st.write("Enter the following details:")
 s_l = float(st.number_input("sepal length", min_value=1, max_value=5))
@@ -15,4 +16,5 @@ if st.button("Predict"):
  predicted_class = iris.target_names[prediction][0]
 
  st.write(f"flower: {predicted_class}")
+
 
